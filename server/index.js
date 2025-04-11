@@ -11,10 +11,20 @@ import applicationRoutes from "./routes/applicationRoutes.js";
 dotenv.config()
 const app = express()
 
+const allowedOrigins = [
+  "https://workbridge-five.vercel.app",
+  "http://localhost:5173" // helpful for local dev
+];
 app.use(cors({
-  origin: "https://workbridge-five.vercel.app/", // allow your frontend
-  credentials: true,
-}))
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json())
 app.use(urlencoded({extended:true}));
 
