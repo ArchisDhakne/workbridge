@@ -15,7 +15,7 @@ const JobCardUser = ({ job }) => {
       const today = new Date().toISOString().split("T")[0];
 
       await axios.post(
-        "/api/applications",
+        "https://workbridge-upda.onrender.com/api/applications",
         {
           company: job.company,
           role: job.position || job.role || job.title,
