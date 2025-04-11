@@ -1,6 +1,6 @@
 // src/components/ApplyModal.jsx
 import React, { useEffect, useState } from "react";
-import Button from "../components/ui/button";
+import Button from "./ui/Button";
 import axios from "axios";
 import { toast } from "react-toastify";
 
