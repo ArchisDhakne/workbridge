@@ -7,7 +7,7 @@ const Dashboard = () => {
   const token = localStorage.getItem("token");
 
   const fetchJobs = async () => {
-    const res = await fetch("http://localhost:5000/api/jobs", {
+    const res = await fetch("https://workbridge-upda.onrender.com/api/jobs", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -20,7 +20,7 @@ const Dashboard = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    const res = await fetch(`http://localhost:5000/api/jobs/${id}`, {
+    const res = await fetch(`https://workbridge-upda.onrender.com/api/jobs/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });

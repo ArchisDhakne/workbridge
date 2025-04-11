@@ -1,7 +1,7 @@
 // src/pages/AppliedJobsPage.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "../components/ui/button";
+import Button from "../components/ui/Button";
 const statusOptions = ["applied", "interview", "offer", "rejected"];
 
 const AppliedJobsPage = () => {
@@ -9,7 +9,7 @@ const AppliedJobsPage = () => {
   const [filter, setFilter] = useState("");
 
   const fetchApplications = async () => {
-    const res = await axios.get("/api/applications", {
+    const res = await axios.get("https://workbridge-upda.onrender.com/api/applications", {
       params: filter ? { status: filter } : {},
     });
     setApplications(res.data);
@@ -20,7 +20,7 @@ const AppliedJobsPage = () => {
   }, [filter]);
 
   const updateStatus = async (id, status) => {
-    await axios.patch(`/api/applications/${id}`, { status });
+    await axios.patch(`https://workbridge-upda.onrender.com/api/applications/${id}`, { status });
     fetchApplications();
   };
 

@@ -12,7 +12,7 @@ const StudentDashboard = () => {
   const [showModal, setShowModal] = useState(false);
 
   // const fetchJobs = async () => {
-  //   const res = await axios.get("http://localhost:5000/api/jobs/");
+  //   const res = await axios.get("https://workbridge-upda.onrender.com/api/jobs/");
   //   setJobs(res.data);
   // };
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const StudentDashboard = () => {
     const fetchJobs = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/jobs", {
+        const res = await axios.get("https://workbridge-upda.onrender.com/api/jobs", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

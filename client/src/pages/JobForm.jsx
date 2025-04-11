@@ -19,7 +19,7 @@ const JobForm = ({ editMode = false }) => {
   useEffect(() => {
     if (editMode && id) {
       axios
-        .get(`http://localhost:5000/api/jobs/${id}`, {
+        .get(`https://workbridge-upda.onrender.com/api/jobs/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
@@ -40,8 +40,8 @@ const JobForm = ({ editMode = false }) => {
 
   const onSubmit = async (formData) => {
     const url = editMode
-      ? `http://localhost:5000/api/jobs/${id}`
-      : "http://localhost:5000/api/jobs";
+      ? `https://workbridge-upda.onrender.com/api/jobs/${id}`
+      : "https://workbridge-upda.onrender.com/api/jobs";
     const method = editMode ? "put" : "post";
 
     try {

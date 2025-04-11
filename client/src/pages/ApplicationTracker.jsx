@@ -11,7 +11,7 @@ const ApplicationTracker = () => {
   const fetchApplications = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/applications", {
+      const res = await axios.get("https://workbridge-upda.onrender.com/api/applications", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setApplications(res.data);
@@ -28,7 +28,7 @@ const ApplicationTracker = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.patch(
-        `http://localhost:5000/api/applications/${id}`,
+        `https://workbridge-upda.onrender.com/api/applications/${id}`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -43,7 +43,7 @@ const ApplicationTracker = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/applications/${id}`, {
+      await axios.delete(`https://workbridge-upda.onrender.com/api/applications/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Application deleted successfully!");

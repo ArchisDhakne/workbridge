@@ -8,7 +8,7 @@ const JobCard = ({ job, onDelete }) => {
 
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/jobs/${job._id}`, {
+      const res = await axios.delete(`https://workbridge-upda.onrender.com/api/jobs/${job._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
